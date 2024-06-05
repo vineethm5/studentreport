@@ -39,13 +39,18 @@ def whatever(n=10)->None:
 
 def createma()->None:
     try:
-        students=student.objects.all()
-        for student in students:
-            subjectss=subject.objects.all()
-            for subject in subjectss:
-                subjj=subjectmarks.objects.create(
-                    student=student,
-                    subject=subject,
-                    marks=random.randint(0,100))
+        stude=student.objects.all()
+        for studeent in stude:
+            subj=subject.objects.all()
+            for subjj in subj:
+                sub=subjectmarks.objects.create(
+                    student=studeent,
+                    subject=subjj,
+                    marks=random.randint(0,100)
+                )
+                
     except Exception as e:
      print(e)        
+
+
+
