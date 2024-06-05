@@ -8,4 +8,5 @@ admin.site.register(subject)
 admin.site.register(subjectmarks)
 
 class dis(admin.ModelAdmin):
+    model=subjectmarks
     list_display=['subject','marks']
