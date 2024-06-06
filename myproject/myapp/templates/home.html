@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Hi!@</p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block start %}
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">SI</th>
+        <th scope="col">Student Id</th>
+        <th scope="col">Student Name</th>
+        <th scope="col">Department</th>
+        <th scope="col">Email</th>
+        <th scope="col">Age</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for students in query%}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{students.studendid}}</td>
+        <td>{{students.studentname}}</td>
+        <td>{{students.department}}</td>
+        <td>{{students.studentemail}}</td>
+        <td>{{students.studentage}}</td>
+        {% endfor %}
+      </tr>
+{% endblock %}

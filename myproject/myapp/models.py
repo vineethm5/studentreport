@@ -36,6 +36,9 @@ class student(models.Model):
 class subject(models.Model):
     subject_name=models.CharField(max_length=100)
 
+    def __str__(self)->str:
+        return self.subject_name
+
 class subjectmarks(models.Model):
     student=models.ForeignKey(student, related_name='student', on_delete=models.CASCADE)
     subject=models.ForeignKey(subject,related_name='subject',on_delete=models.CASCADE)
